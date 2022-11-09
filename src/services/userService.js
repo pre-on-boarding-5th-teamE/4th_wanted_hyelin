@@ -33,10 +33,10 @@ const signUp = async (data) => {
   if (exists) {
     throw new error("Exists_User", 409);
   }
-  const hashedPassword = hashPassword(password);
+  const hashedPassword = await hashPassword(password);
 
   data.password = hashedPassword;
-  const result = User.create(data);
+  const result = await User.create(data);
 
   return result;
 };
@@ -46,12 +46,12 @@ const signIn = async (data) => {
 
   const user = await User.findOne({ email });
   if (!user) {
-    throw error("No_Exists_User", 404);
+    throw new error("No_Exists_User", 404);
   }
 
   const match = await bcrypt.compare(password, user.password);
   if (!match) {
-    throw error("Incorrect_Password", 400);
+    throw new error("Incorrect_Password", 400);
   }
   const token = await getAccessToken(user);
 
