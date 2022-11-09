@@ -26,6 +26,11 @@ const getAccessToken = async (user) => {
   return token;
 };
 
+const getUserById = async (id) => {
+  const user = await User.findOne({ id: id });
+  return user;
+};
+
 const signUp = async (data) => {
   const { email, password } = data;
   const exists = await User.exists({ email });
@@ -58,4 +63,4 @@ const signIn = async (data) => {
   return { token };
 };
 
-module.exports = { signUp, signIn };
+module.exports = { signUp, signIn, getUserById };

@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt");
-
 const { Schema } = mongoose;
-
 const addressSchema = require("./addressSchema");
+const sellerSchema = require("./sellerSchema");
 const userSchema = new Schema(
   {
     email: { type: String, required: true, maxLength: 100 },
@@ -34,7 +32,11 @@ const userSchema = new Schema(
     address: { type: addressSchema, required: false, default: null },
     vertified: { type: Boolean, required: true, default: true },
     role: { type: String, required: true, default: "user" },
-    /* TODO: social login info 추가 */
+    seller: {
+      type: sellerSchema,
+      required: false,
+      default: null,
+    },
     deletedAt: { type: Date, required: false, default: null },
   },
   {

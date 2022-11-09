@@ -36,6 +36,7 @@ const addressSchema = new Schema(
     },
   },
   {
+    _id: false,
     timestamps: false,
   }
 );
