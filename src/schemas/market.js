@@ -7,19 +7,18 @@ const marketSchema = new Schema({
     type: String,
     required: true,
   },
-  // TODO : 카테고리 관련 정보
+  categories: [
+    {
+      type: Object,
+      required: false,
+    },
+  ],
   items: [
     {
       type: Object,
       required: false,
     },
   ],
-  // 썸네일 정보
-  thumbnail: {
-    type: Object,
-    required: null,
-    default: null,
-  },
 });
 
 module.exports = new mongoose.model("Market", marketSchema);
