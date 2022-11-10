@@ -1,5 +1,4 @@
 const userService = require("../services/userService");
-const errorHandler = require("../middlewares/errorHandler");
 const error = require("../middlewares/errorConstructor");
 
 const signUp = async (req, res) => {
@@ -12,4 +11,13 @@ const signIn = async (req, res) => {
   res.status(200).json(result);
 };
 
-module.exports = { signUp, signIn };
+const getLeaveInfo = async (req, res) => {
+  const leaveReasons = userService.leaveInfo();
+  res.status(200).json(leaveReasons);
+};
+
+const leave = async (req, res) => {
+  const result = await userService.userDelete(req);
+  res.status(200).json({ message: "OK" });
+};
+module.exports = { signUp, signIn, getLeaveInfo, leave };
