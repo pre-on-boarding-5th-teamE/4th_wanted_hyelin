@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const User = require("../schemas/user");
-
+const productService = require("./productService");
 const error = require("../middlewares/errorConstructor");
 
 const hashPassword = async (password) => {
@@ -42,7 +42,11 @@ const signUp = async (data) => {
 
   data.password = hashedPassword;
   const result = await User.create(data);
+  if (!result) {
+    throw new error("Server Error", 500);
+  }
 
+  delete result.password;
   return result;
 };
 
@@ -63,4 +67,39 @@ const signIn = async (data) => {
   return { token };
 };
 
-module.exports = { signUp, signIn, getUserById };
+const leaveInfo = () => {
+  // hardCoding
+  return [
+    "자주 접속하지 않아서",
+    "잦은 오류, 장애 발생",
+    "과도한 쇼핑을 자제하기 위해",
+  ];
+};
+
+const userDelete = async (req) => {
+  const { reason, description } = req.body;
+  const userId = req.user.id;
+
+  const user = await getUserById(userId);
+  if (!user) {
+    throw new error("User_Already_Leave", 404);
+  }
+  if (user.deletedAt) {
+    throw new error("User_Already_Leave", 404);
+  }
+  const result = await User.findByIdAndUpdate(userId, {
+    deletedAt: Date.now(),
+    leave: {
+      reason,
+      description: !!description ? description : null,
+    },
+  });
+  // 유저등록 상품도 available false 처리
+  const productDeleted = await productService.deleteProdcutByUserId(userId);
+  if (productDeleted < 0) {
+    throw error("product_Delete_Fail", 500);
+  }
+  return result;
+};
+
+module.exports = { signUp, signIn, getUserById, leaveInfo, userDelete };

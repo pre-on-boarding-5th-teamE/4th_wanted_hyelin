@@ -12,23 +12,8 @@ const userSchema = new Schema(
       last: { type: String, required: false, default: null },
       full: { type: String, required: false },
     },
-    // TODO: 썸네일 스키마 정의
-    // thumbnail: {
-    //
-    // },
     mobile: { type: String, required: true },
     phone: { type: String, required: false, defualt: null },
-    // country: {
-    //   name: {
-    //     en: { type: String, required: true },
-    //     ko: { type: String, required: false },
-    //   },
-    //   alias: { type: String, required: false },
-    //   code: { type: String, required: false },
-    // },
-    // laungue: { type: String, required: false, default: "korean" },
-    // currency: { type: String, required: false },
-    // timezone: { type: String, require: true, default: "GMT+9" },
     address: { type: addressSchema, required: false, default: null },
     vertified: { type: Boolean, required: true, default: true },
     role: { type: String, required: true, default: "user" },
@@ -38,6 +23,16 @@ const userSchema = new Schema(
       default: null,
     },
     deletedAt: { type: Date, required: false, default: null },
+    leave: {
+      reason: {
+        type: String,
+        required: false,
+      },
+      description: {
+        type: String,
+        required: false,
+      },
+    },
   },
   {
     timestamps: true,

@@ -25,6 +25,17 @@ const SellerSchema = new Schema(
         maxLength: 20,
       },
     },
+    intro: {
+      type: String,
+      maxLength: 150,
+      required: false,
+      default: null,
+    },
+    croketCared: {
+      type: Boolean,
+      required: true,
+      default: false,
+    },
   },
   {
     timestamps: true,

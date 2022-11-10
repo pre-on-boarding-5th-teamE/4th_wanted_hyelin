@@ -22,4 +22,8 @@ const registerSeller = async (req) => {
   return result;
 };
 
+const addProduct = async (data) => {
+  //form data 추출하기
+  //product model 로 create 하기
+};
 module.exports = { registerSeller };

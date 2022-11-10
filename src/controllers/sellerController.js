@@ -1,4 +1,6 @@
 const sellerService = require("../services/sellerService");
+const productService = require("../services/productService");
+
 const error = require("../middlewares/errorConstructor");
 
 const register = async (req, res) => {
@@ -8,5 +10,5 @@ const register = async (req, res) => {
   }
   res.status(201).json(result);
 };
-
+const addProductBySeller = async (req, res) => {};
 module.exports = { register };
