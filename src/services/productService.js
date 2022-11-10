@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Product = require("../schemas/product");
 const sellerService = require("./sellerService");
+const error = require("../middlewares/errorConstructor");
 
 const makeVariationsId = async (variations) => {
   for (let variation of variations) {
@@ -24,6 +25,7 @@ const addProduct = async (req) => {
 
   const variationArray = await makeVariationsId(variations);
   const insertData = {
+    sellerId: userId,
     name,
     summary,
     description,
@@ -59,4 +61,28 @@ const deleteProdcutsByUserId = async (userId) => {
   );
   return result.modifiedCount;
 };
-module.exports = { addProduct, deleteProdcutsByUserId };
+
+const deleteOne = async (req) => {
+  const user = req.user;
+  const productId = req.params.productId;
+
+  const deleteProduct = await Product.findOne({ id: productId });
+  if (!deleteProduct) {
+    throw new error("Not_Found", 404);
+  }
+  if (deleteProduct.userId !== user.id) {
+    throw new error("Invalid_User", 400);
+  }
+
+  const product = await Product.updateOne(
+    { id: productId },
+    {
+      avaiable: false,
+      deletedAt: Date.now(),
+    }
+  );
+
+  return product;
+};
+
+module.exports = { addProduct, deleteProdcutsByUserId, deleteOne };

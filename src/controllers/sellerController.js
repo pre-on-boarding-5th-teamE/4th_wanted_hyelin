@@ -19,4 +19,9 @@ const addProductBySeller = async (req, res) => {
   res.status(201).json(result);
 };
 
-module.exports = { register, addProductBySeller };
+const deleteProduct = async (req, res) => {
+  const result = await productService.deleteOne(req);
+  console.log(result);
+  res.status(200).json("OK");
+};
+module.exports = { register, addProductBySeller, deleteProduct };

@@ -18,4 +18,11 @@ router.post(
   errorHandler(sellerContorller.addProductBySeller)
 );
 
+router.delete(
+  "/product/:productId",
+  loginRequired,
+  sellerRequired,
+  errorHandler(sellerContorller.deleteProduct)
+);
+
 module.exports = router;
