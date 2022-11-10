@@ -7,6 +7,10 @@ const ProductSchema = new Schema(
       type: Object,
       required: true,
     },
+    seller: {
+      type: Object,
+      required: true,
+    },
     name: {
       type: String,
       required: true,

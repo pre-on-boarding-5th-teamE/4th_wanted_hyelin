@@ -26,6 +26,7 @@ const addProduct = async (req) => {
   const variationArray = await makeVariationsId(variations);
   const insertData = {
     sellerId: userId,
+    seller,
     name,
     summary,
     description,
@@ -46,6 +47,18 @@ const addProduct = async (req) => {
   try {
     const result = await Product.create(insertData);
     return result;
+  } catch (err) {
+    throw new error(err.message, err.statusCode);
+  }
+};
+
+const getProductDetail = async (productId) => {
+  try {
+    const product = await Product.findOne({
+      id: productId,
+    });
+
+    return product;
   } catch (err) {
     throw new error(err.message, err.statusCode);
   }
@@ -85,4 +98,9 @@ const deleteOne = async (req) => {
   return product;
 };
 
-module.exports = { addProduct, deleteProdcutsByUserId, deleteOne };
+module.exports = {
+  addProduct,
+  getProductDetail,
+  deleteProdcutsByUserId,
+  deleteOne,
+};
