@@ -95,7 +95,7 @@ const userDelete = async (req) => {
     },
   });
   // 유저등록 상품도 available false 처리
-  const productDeleted = await productService.deleteProdcutByUserId(userId);
+  const productDeleted = await productService.deleteProdcutsByUserId(userId);
   if (productDeleted < 0) {
     throw error("product_Delete_Fail", 500);
   }

@@ -10,5 +10,18 @@ const register = async (req, res) => {
   }
   res.status(201).json(result);
 };
-const addProductBySeller = async (req, res) => {};
-module.exports = { register };
+
+const addProductBySeller = async (req, res) => {
+  const result = await productService.addProduct(req);
+  if (!result) {
+    throw new error("add_Product_Fail", 500);
+  }
+  res.status(201).json(result);
+};
+
+const deleteProduct = async (req, res) => {
+  const result = await productService.deleteOne(req);
+  console.log(result);
+  res.status(200).json("OK");
+};
+module.exports = { register, addProductBySeller, deleteProduct };

@@ -12,11 +12,34 @@ const userSchema = new Schema(
       last: { type: String, required: false, default: null },
       full: { type: String, required: false },
     },
-    mobile: { type: String, required: true },
-    phone: { type: String, required: false, defualt: null },
-    address: { type: addressSchema, required: false, default: null },
-    vertified: { type: Boolean, required: true, default: true },
-    role: { type: String, required: true, default: "user" },
+    country: {
+      type: Object,
+      required: false,
+    },
+    mobile: {
+      type: String,
+      required: true,
+    },
+    phone: {
+      type: String,
+      required: false,
+      defualt: null,
+    },
+    address: {
+      type: addressSchema,
+      required: false,
+      default: null,
+    },
+    vertified: {
+      type: Boolean,
+      required: true,
+      default: true,
+    },
+    role: {
+      type: String,
+      required: true,
+      default: "user",
+    },
     seller: {
       type: sellerSchema,
       required: false,
