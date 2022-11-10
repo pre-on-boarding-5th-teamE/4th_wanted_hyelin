@@ -26,7 +26,7 @@ const CategorySchema = new Schema(
       required: false,
       default: null,
     },
-    //썸네일 추가
+    //TODO : 썸네일 추가
   },
   { timestamps: true }
 );
