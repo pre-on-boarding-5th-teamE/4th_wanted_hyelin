@@ -10,9 +10,9 @@
 
   <p align="center">
     </h4>원티드 온보딩 4번째 과제</h4></br>
-    with. 아이오엘오
+    with. 와이오엘오
     <br />
-    <a href="https://documenter.getpostman.com/view/17264763/2s8YYJogg6"><strong> » API Documentation 보러가기</strong></a>
+    <a href="https://documenter.getpostman.com/view/17264763/2s8YeoNtLp"><strong> » API Documentation 보러가기</strong></a>
     <br />
     <br />
   </p>
@@ -130,15 +130,16 @@
 #### 회원기능    
 `회원가입` -  이메일과 비번입력, 유저 이름으로 회원가입을 합니다 (o)    
 `로그인` - 이메일과 비번을 입력하고 저장된 회원정보와 일치하면 jwt 토큰을 발급 받습니다(o)   
-`탈퇴기능` - 탈퇴 사유를 받고, 해당 아이디를 soft Delete하며, 등록한 제품은 판매 불가 처리합니다(o)     
-
-회원 셀러 기능     
+`탈퇴기능` - 탈퇴 사유를 받고, 해당 아이디를 soft Delete하며, 등록한 제품은 판매 불가 처리합니다(o)
 `셀러 입점 정보 등록` - 일반 회원이 셀러 입점을 등록합니다(o)     
-`셀러 상품 등록` - 형식에 맞춘 상품 정보를 등록합니다(o)      
+
+#### 회원 셀러 기능     
+`셀러 상품 등록` - 형식에 맞춘 상품 정보를 등록합니다(o)   
+`셀러 상품 수정` - 상품을 등록한 셀러가 상품 정보를 수정합니다(o)   
 `셀러 상품 삭제` - 셀러가 자신이 등록한 상품을 삭제 합니다(o)   
 
 
-상품 기능   
+#### 상품 기능   
 `상품 상세 조회` - 상품을 상세 조회 합니다(o)   
 `상품 조회` - 모든 사용자가 카테고리별로 상품을 조회 합니다. 또한 최신순 정렬 국가별 정렬을 지원합니다 (x)
 
@@ -149,7 +150,9 @@
 
 Postman documentation에  API 사용방법이 있습니다.
 
-_API 설명서 보러가기 [ApiDocumentation](https://documenter.getpostman.com/view/17264763/2s8YYJogg6)_
+_API 설명서 보러가기 [ApiDocumentation](https://documenter.getpostman.com/view/17264763/2s8YeoNtLp)_
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -158,12 +161,13 @@ _API 설명서 보러가기 [ApiDocumentation](https://documenter.getpostman.com
 
 *김혜린(OolongTea620)*     
 [@velog](https://velog.io/@rlafls9596)     
-email   
+
+Email   
 rlafls9596@gmail.com        
 he9596@naver.com
 
 Project Link   
-[3rd_ThingsFlow_hyelin](https://github.com/pre-on-boarding-5th-teamE/3rd_ThingsFlow_hyelin)
+[3rd_YOLO_hyelin](https://github.com/OolongTea620/4th_YOLO_hyelin)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
