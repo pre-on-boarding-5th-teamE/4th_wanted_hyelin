@@ -159,12 +159,13 @@ _API 설명서 보러가기 [ApiDocumentation](https://documenter.getpostman.com
 
 *김혜린(OolongTea620)*     
 [@velog](https://velog.io/@rlafls9596)     
-email   
+
+Email   
 rlafls9596@gmail.com        
 he9596@naver.com
 
 Project Link   
-[3rd_ThingsFlow_hyelin](https://github.com/pre-on-boarding-5th-teamE/3rd_ThingsFlow_hyelin)
+[3rd_YOLO_hyelin](https://github.com/OolongTea620/4th_YOLO_hyelin)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
