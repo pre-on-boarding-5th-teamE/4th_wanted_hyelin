@@ -10,7 +10,7 @@
 
   <p align="center">
     </h4>원티드 온보딩 4번째 과제</h4></br>
-    with. 아이오엘오
+    with. 와이오엘오
     <br />
     <a href="https://documenter.getpostman.com/view/17264763/2s8YYJogg6"><strong> » API Documentation 보러가기</strong></a>
     <br />
