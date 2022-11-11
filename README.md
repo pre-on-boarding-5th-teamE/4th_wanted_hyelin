@@ -12,7 +12,7 @@
     </h4>원티드 온보딩 4번째 과제</h4></br>
     with. 와이오엘오
     <br />
-    <a href="https://documenter.getpostman.com/view/17264763/2s8YYJogg6"><strong> » API Documentation 보러가기</strong></a>
+    <a href="https://documenter.getpostman.com/view/17264763/2s8YeoNtLp"><strong> » API Documentation 보러가기</strong></a>
     <br />
     <br />
   </p>
@@ -150,7 +150,9 @@
 
 Postman documentation에  API 사용방법이 있습니다.
 
-_API 설명서 보러가기 [ApiDocumentation](https://documenter.getpostman.com/view/17264763/2s8YYJogg6)_
+_API 설명서 보러가기 [ApiDocumentation](https://documenter.getpostman.com/view/17264763/2s8YeoNtLp)_
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
